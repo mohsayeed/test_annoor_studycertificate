@@ -24,7 +24,7 @@ export class AppComponent {
   date=new Date();
   Date_Birth='21/10/2011';
   AdmissionNumber = 4001;
-  Date_Numbers = 'TWO, ONE, ONE, ZERO, TWO, ZERO, ONE, ONE'
+  Date_Numbers = 'TWO ONE, ONE ZERO, TWO ZERO ONE ONE'
   @ViewChild('invoice') invoiceElement!: ElementRef;
   public generatePDF(): void {
 
@@ -55,27 +55,27 @@ export class AppComponent {
 //dd
 y = +x[0]
 number_words = converter.toWords(y)
-final_result = final_result.concat(number_words,',')
+final_result = final_result.concat(number_words,' ')
 y = +x[1]
 number_words = converter.toWords(y)
-final_result = final_result.concat(number_words,',')
+final_result = final_result.concat(number_words,', ')
 //mm
 y = +x[3]
 number_words = converter.toWords(y)
-final_result = final_result.concat(number_words,',')
+final_result = final_result.concat(number_words,' ')
 y = +x[4]
 number_words = converter.toWords(y)
-final_result = final_result.concat(number_words,',')
+final_result = final_result.concat(number_words,', ')
 //yyyy
 y = +x[6]
 number_words = converter.toWords(y)
-final_result = final_result.concat(number_words,',')
+final_result = final_result.concat(number_words,' ')
 y = +x[7]
 number_words = converter.toWords(y)
-final_result = final_result.concat(number_words,',')
+final_result = final_result.concat(number_words,' ')
 y = +x[8]
 number_words = converter.toWords(y)
-final_result = final_result.concat(number_words,',')
+final_result = final_result.concat(number_words,' ')
 y = +x[9]
 number_words = converter.toWords(y)
 final_result = final_result.concat(number_words)

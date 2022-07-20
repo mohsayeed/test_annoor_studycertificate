@@ -1,39 +1,40 @@
 
 
 <div class="container">
-  <form #userName="ngForm" (ngSubmit)="onClickSubmit(userName.value)">
-    <div class="mb-3">
-      <label for="Admission" class="form-label">Admission Number</label>
-      <input type="text" class="form-control" name="Admission" placeholder="Admission Number" id="Admission" ngModel>
-    </div>
-    <div class="mb-3">
-      <label for="StudentName" class="form-label">Student Name</label>
-      <input type="text" class="form-control" name="StudentName" placeholder="StudentName" id="StudentName" ngModel>
-    </div>
-    <div class="mb-3">
-      <label for="FatherName" class="form-label">Father Name</label>
-      <input type="text" class="form-control" name="FatherName" placeholder="FatherName" id="FatherName" ngModel>
-    </div>
-    <div class="mb-3">
-      <label for="Class" class="form-label">Class</label>
-      <input type="text" class="form-control" name="Class" placeholder="Class" id="Class" ngModel>
-    </div>
-    <div class="mb-3">
-      <label for="Duration" class="form-label">Duration</label>
-      <input type="text" class="form-control" name="Duration" placeholder="Duration" id="Duration" ngModel>
-    </div>
-    <div class="mb-3">
-      <label for="DOB" class="form-label">DOB</label>
-      <input type="text" class="form-control" name="DOB" placeholder="DOB" id="DOB" ngModel>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+<div class="row">
+  <div class="col-md-6">
+    <h1 class="text-center">Student Details</h1>
+    <form #userName="ngForm" (ngSubmit)="onClickSubmit(userName.value)">
+      <div class="mb-3">
+        <label for="Admission" class="form-label">Admission Number</label>
+        <input type="text" class="form-control" name="Admission" placeholder="Admission Number" id="Admission" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="StudentName" class="form-label">Student Name</label>
+        <input type="text" class="form-control" name="StudentName" placeholder="StudentName" id="StudentName" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="FatherName" class="form-label">Father Name</label>
+        <input type="text" class="form-control" name="FatherName" placeholder="FatherName" id="FatherName" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="Class" class="form-label">Class</label>
+        <input type="text" class="form-control" name="Class" placeholder="Class" id="Class" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="Duration" class="form-label">Duration</label>
+        <input type="text" class="form-control" name="Duration" placeholder="Duration" id="Duration" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="DOB" class="form-label">DOB</label>
+        <input type="text" class="form-control" name="DOB" placeholder="DOB" id="DOB" ngModel>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  div.
 </div>
-
-
-
-
-
+</div>
 
 
 
@@ -64,7 +65,7 @@
         </div>
         <div class="text-center pt-5">
           <h5 class="font-2 font-cam">Date of birth as per record : {{Date_Birth}}</h5>
-          <h5 class="font-2 font-cam">({{Date_Numbers}}.)</h5>
+          <h5 class="font-2 font-cam">({{Date_Numbers|uppercase}}.)</h5>
         </div>
         <div style="margin-top: 14rem">
           <div class="d-flex justify-content-between">
