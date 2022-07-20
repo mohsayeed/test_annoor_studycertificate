@@ -15,13 +15,12 @@ export class AppComponent {
   selectedDate=''
   myDate:any = new Date();
   constructor(private datePipe: DatePipe){
-      this.myDate = this.datePipe.transform(this.myDate, 'dd-MM-yyyy');
   }  
   Class = '6th'
   Duration = '2022-23'
   StudentName = 'Shaik Mohammed Sayeed';
   FatherName = 'Shaik Irshad'
-  date=new Date();
+  date=this.datePipe.transform(this.myDate, 'dd-MM-yyyy');
   Date_Birth='21/10/2011';
   AdmissionNumber = 4001;
   Date_Numbers = 'TWO ONE, ONE ZERO, TWO ZERO ONE ONE'
@@ -43,10 +42,13 @@ export class AppComponent {
   this.Duration = result.Duration
   this.StudentName = result.StudentName;
   this.FatherName = result.FatherName
-  this.date=new Date();
+  this.date=this.myDate;
   this.Date_Birth=result.DOB;
   this.AdmissionNumber = result.Admission;
   this.Date_Numbers =  this.number_string(this.Date_Birth)
+  if(result.DateofIssue!=''){
+    this.date = result.DateofIssue
+  }
  }
  number_string(x:string){
  var final_result = ''
@@ -81,5 +83,8 @@ number_words = converter.toWords(y)
 final_result = final_result.concat(number_words)
 
 return final_result;
+ }
+ onyearClassSubmit(year:any){
+  console.log(year.birthyear)
  }
 }
