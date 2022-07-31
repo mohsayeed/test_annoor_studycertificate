@@ -2,54 +2,77 @@
 
 <div class="container mt-5 px-4">
 <div class="row gx-5">
-  <div class="col-md-6 ">
-    <h1 class="text-center">Student Details</h1>
+  <div class="col ">
+    <h1 class="text-center">Student Details</h1> 
     <form #userName="ngForm" (ngSubmit)="onClickSubmit(userName.value)">
-      <div class="mb-3">
-        <label for="Admission" class="form-label">Admission Number</label>
-        <input type="text" class="form-control" name="Admission" placeholder="Admission Number" id="Admission" ngModel>
+      <div>C&A</div> 
+      <label class="switch" for="isCASeen">
+        <input type="checkbox"  [(ngModel)]="test" name="isCASeen" id="isCASeen" (change)="checkClicked(test)">
+        <span class="slider round"></span>
+      </label>
+      <div class="row">
+        <div class="col">
+          <div class="mb-3">
+            <label for="Admission" class="form-label">Admission Number</label>
+            <input type="text" class="form-control" name="Admission" placeholder="Admission Number" id="Admission" ngModel>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="DateofIssue" class="form-label">Date of Issue</label>
+            <input type="text" class="form-control" name="DateofIssue" placeholder="Date of Issue" id="DateofIssue" ngModel>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="StudentName" class="form-label">Student Name</label>
+            <input type="text" class="form-control" name="StudentName" placeholder="StudentName" id="StudentName" ngModel>
+          </div>
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="DateofIssue" class="form-label">Date of Issue</label>
-        <input type="text" class="form-control" name="DateofIssue" placeholder="Date of Issue" id="DateofIssue" ngModel>
+      <div class="row">
+        <div class="col">
+          <div class="mb-3">
+            <label for="FatherName" class="form-label">Father Name</label>
+            <input type="text" class="form-control" name="FatherName" placeholder="FatherName" id="FatherName" ngModel>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="Class" class="form-label">Class</label>
+            <input type="text" class="form-control" name="Class" placeholder="Class" id="Class" ngModel>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="Duration" class="form-label">Duration</label>
+            <input type="text" class="form-control" name="Duration" placeholder="Duration" id="Duration" ngModel>
+          </div>
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="StudentName" class="form-label">Student Name</label>
-        <input type="text" class="form-control" name="StudentName" placeholder="StudentName" id="StudentName" ngModel>
-      </div>
-      <div class="mb-3">
-        <label for="FatherName" class="form-label">Father Name</label>
-        <input type="text" class="form-control" name="FatherName" placeholder="FatherName" id="FatherName" ngModel>
-      </div>
-      <div class="mb-3">
-        <label for="Class" class="form-label">Class</label>
-        <input type="text" class="form-control" name="Class" placeholder="Class" id="Class" ngModel>
-      </div>
-      <div class="mb-3">
-        <label for="Duration" class="form-label">Duration</label>
-        <input type="text" class="form-control" name="Duration" placeholder="Duration" id="Duration" ngModel>
-      </div>
+  <div class="row">
+    <div class="col">
       <div class="mb-3">
         <label for="DOB" class="form-label">DOB</label>
         <input type="text" class="form-control" name="DOB" placeholder="DOB" id="DOB" ngModel>
       </div>
+    </div>
+    <div class="col" *ngIf="test">
+      <div class="mb-3">
+        <label for="cid" class="form-label">Child ID</label>
+        <input type="text" class="form-control" name="cid" placeholder="Child Id" id="cid" ngModel>
+      </div>
+    </div>
+    <div class="col" *ngIf="test">
+      <div class="mb-3">
+        <label for="aadhaar" class="form-label">Aadhaar Number</label>
+        <input type="number" class="form-control" name="aadhaar" placeholder="Aadhaar Number" id="aadhaar" ngModel>
+      </div>
+    </div>
+  </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
-  <!-- <div class="col-md-6 ">
-    <h1 class="text-center">Year - Class Analysis</h1>
-    <form #yearClassAnalysis="ngForm" (ngSubmit)="onyearClassSubmit(yearClassAnalysis.value)">
-      <div class="row">
-        <div class="mb-3 col">
-          <label for="Admission" class="form-label">Birth Year</label>
-          <input type="text" class="form-control" name="birthyear" placeholder="Birth Year" id="birthyear" ngModel>
-        </div>
-        <div class="mb-3 col" style="margin-top: 2rem;">
-          <button type="submit" class="btn btn-secondary d-flex justify-content-center">Submit YEAR</button>
-        </div>
-      </div>
-    </form>
-  </div> -->
 </div>
 </div>
 
@@ -64,6 +87,12 @@
           <h1 class="font-4 text-uppercase fw-bold  font-cam">Annoor Foundation School</h1>
           <h5><u class="font-2 text-uppercase font-cam fw-bold"> STUDY & CONDUCT CERTIFICATE</u></h5>
           <h5 class="font-2 fw-bold font-cam">RAYACHOTY - 516269. A.P</h5>
+        </div>
+        <div class="d-flex justify-content-between" *ngIf="test">
+          <div class="pt-2" style="margin-top: 50px;">
+            <h6 class="font-1 ">C.ID {{childId}}</h6>
+          </div>
+          
         </div>
         <div class="d-flex justify-content-between">
           <div class="pt-2" style="margin-top: 50px;">
@@ -83,6 +112,9 @@
         <div class="text-center pt-5">
           <h5 class="font-2 font-cam">Date of birth as per record : {{Date_Birth}}</h5>
           <h5 class="font-2 font-cam">({{Date_Numbers|uppercase}}.)</h5>
+        </div>
+        <div *ngIf="test">
+          <h5 class="font-2 font-cam">Aadhaar No. {{aadhaar}}</h5>
         </div>
         <div style="margin-top: 14rem">
           <div class="d-flex justify-content-between">

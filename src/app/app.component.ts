@@ -13,9 +13,12 @@ import html2canvas from 'html2canvas';
 })
 export class AppComponent {
   selectedDate=''
+  test = false
   myDate:any = new Date();
   constructor(private datePipe: DatePipe){
   }  
+  aadhaar = ''
+  childId = ''
   Class = '6th'
   Duration = '2022-23'
   StudentName = 'Shaik Mohammed Sayeed';
@@ -49,6 +52,9 @@ export class AppComponent {
   if(result.DateofIssue!=''){
     this.date = result.DateofIssue
   }
+  this.childId = result.cid
+  this.aadhaar = result.aadhaar
+  console.log()
  }
  number_string(x:string){
  var final_result = ''
@@ -86,5 +92,8 @@ return final_result;
  }
  onyearClassSubmit(year:any){
   console.log(year.birthyear)
+ }
+ checkClicked(val:any){
+  this.test =  !val
  }
 }
